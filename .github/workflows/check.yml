@@ -1,0 +1,27 @@
+name: Автозапуск Ruff
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  ruff:
+    name: Автозапуск Ruff
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Скачивание кода
+        uses: actions/checkout@v4
+
+      - name: Установка Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Установка ruff
+        run: |
+          pip install ruff
+
+      - name: Запуск Ruff
+        run: |
+          ruff check --output-format=github
