@@ -1,8 +1,5 @@
 import datetime
-import time
 from apscheduler.schedulers.blocking import BlockingScheduler
-import requests
-from pprint import pprint, pp
 from dotenv import load_dotenv
 import os
 from stalcraftapi_model import Stalcraft
@@ -17,6 +14,7 @@ secret_token = os.getenv("secret_token")
 # params
 item_id = "4l7p"
 region = "ru"
+
 
 def get_history():
     history = Stalcraft.get_item_price_history(
