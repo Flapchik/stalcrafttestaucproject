@@ -25,3 +25,7 @@ jobs:
       - name: Запуск Ruff
         run: |
           ruff check --output-format=github
+
+      - name: Завершение Ruff
+        run: |
+          echo "Ruff завершен"
