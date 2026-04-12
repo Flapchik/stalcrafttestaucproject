@@ -27,5 +27,6 @@ jobs:
           ruff check --output-format=github
 
       - name: Завершение Ruff
+        if: always()
         run: |
           echo "Ruff завершен"
